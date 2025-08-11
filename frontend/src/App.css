@@ -97,3 +97,34 @@ h1 {
   background-color: #cc3366;
 }
 
+.register-form {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 300px;
+}
+
+.register-form input {
+  padding: 8px 12px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ff6699;
+}
+
+.register-form button {
+  padding: 8px 16px;
+  background-color: #ff3399;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.register-form button:hover {
+  background-color: #cc0066;
+}
+
+

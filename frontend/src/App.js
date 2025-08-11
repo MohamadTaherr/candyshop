@@ -6,6 +6,10 @@ function App() {
   const [formData, setFormData] = useState({ name: '', price: '', description: '' });
   const [editId, setEditId] = useState(null);
 
+  // Register form state
+  const [showRegister, setShowRegister] = useState(false);
+  const [registerData, setRegisterData] = useState({ username: '', email: '', password: '' });
+
   // Fetch candies
   const fetchCandies = () => {
     fetch('http://localhost:5000/candies')
@@ -18,13 +22,12 @@ function App() {
     fetchCandies();
   }, []);
 
-  // Handle form field changes
+  // Candy form handlers
   const handleChange = e => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  // Submit form (Add or Edit)
   const handleSubmit = async e => {
     e.preventDefault();
 
@@ -59,7 +62,7 @@ function App() {
     }
   };
 
-  // Start editing a candy
+  // Edit candy
   const handleEdit = candy => {
     setFormData({
       name: candy.name,
@@ -86,9 +89,56 @@ function App() {
     }
   };
 
+  // Register form handlers
+  const handleRegisterChange = e => {
+    const { name, value } = e.target;
+    setRegisterData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleRegisterSubmit = e => {
+    e.preventDefault();
+    alert(`Registered user:\nUsername: ${registerData.username}\nEmail: ${registerData.email}`);
+    // Here you can later add your backend API call for registration
+    setRegisterData({ username: '', email: '', password: '' });
+    setShowRegister(false);
+  };
+
   return (
     <div className="app-container">
       <h1>Candy Shop 🍭</h1>
+
+      <button onClick={() => setShowRegister(!showRegister)}>
+        {showRegister ? 'Close Register' : 'Register'}
+      </button>
+
+      {showRegister && (
+        <form onSubmit={handleRegisterSubmit} className="register-form">
+          <input
+            name="username"
+            placeholder="Username"
+            value={registerData.username}
+            onChange={handleRegisterChange}
+            required
+          />
+          <input
+            name="email"
+            type="email"
+            placeholder="Email"
+            value={registerData.email}
+            onChange={handleRegisterChange}
+            required
+          />
+          <input
+            name="password"
+            type="password"
+            placeholder="Password"
+            value={registerData.password}
+            onChange={handleRegisterChange}
+            required
+          />
+          <button type="submit">Submit</button>
+        </form>
+      )}
 
       <form onSubmit={handleSubmit} className="candy-form">
         <input
