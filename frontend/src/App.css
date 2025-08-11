@@ -1,0 +1,99 @@
+.app-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #fff0f6;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(255, 105, 180, 0.2);
+}
+
+h1 {
+  color: #ff3399;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.candy-list {
+  list-style: none;
+  padding: 0;
+}
+
+.candy-item {
+  background: #ffe6f0;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  padding: 15px 20px;
+  box-shadow: 0 4px 12px rgba(255, 105, 180, 0.15);
+  transition: transform 0.2s ease;
+}
+
+.candy-item:hover {
+  transform: scale(1.03);
+}
+
+.candy-name {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #cc0066;
+}
+
+.candy-price {
+  color: #ff6699;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+.candy-description {
+  font-style: italic;
+  color: #aa4465;
+  margin-top: 8px;
+}
+
+.candy-form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.candy-form input {
+  padding: 8px 12px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ff6699;
+  width: 150px;
+}
+
+.candy-form button {
+  padding: 8px 16px;
+  background-color: #ff3399;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.candy-form button:hover {
+  background-color: #cc0066;
+}
+
+.candy-item button {
+  margin-right: 10px;
+  padding: 6px 12px;
+  background-color: #ff6699;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.candy-item button:hover {
+  background-color: #cc3366;
+}
+
